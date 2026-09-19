@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Cinema Bintang - Nonton Film Tanpa Iklan</title>
     
     <!-- Tailwind CSS untuk Styling -->
@@ -16,6 +16,7 @@
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: #09090b; 
+            -webkit-tap-highlight-color: transparent; /* Hilangkan efek tap biru di HP */
         }
         .aspect-\\[2\\/3\\] { aspect-ratio: 2 / 3; }
         html { scroll-behavior: smooth; }
@@ -30,12 +31,12 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="absolute w-full z-40 bg-gradient-to-b from-black/90 to-transparent pt-2 pb-6">
+    <nav class="absolute w-full z-40 bg-gradient-to-b from-black/90 to-transparent pt-3 pb-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-center md:justify-start items-center h-20">
+        <div class="flex justify-center md:justify-start items-center h-16">
           <div class="flex items-center gap-2 cursor-pointer">
-            <i data-lucide="star" class="text-amber-500 fill-amber-500 w-8 h-8 md:w-10 md:h-10"></i>
-            <span class="text-white font-bold text-2xl md:text-3xl tracking-tight">
+            <i data-lucide="star" class="text-amber-500 fill-amber-500 w-8 h-8 sm:w-10 sm:h-10"></i>
+            <span class="text-white font-bold text-2xl sm:text-3xl tracking-tight">
               CINEMA<span class="text-amber-500">BINTANG</span>
             </span>
           </div>
@@ -44,34 +45,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="relative w-full h-[60vh] sm:h-[75vh] bg-zinc-900">
+    <div class="relative w-full min-h-[60vh] sm:h-[75vh] bg-zinc-900 flex items-center">
       <div class="absolute inset-0">
-        <!-- GAMBAR BACKGROUND HERO (Bisa Anda ganti linknya di bawah ini) -->
+        <!-- GAMBAR BACKGROUND HERO (Silakan ganti src ini jika ingin ubah background atas) -->
         <img 
-          src="https://cdn.phototourl.com/free/2026-09-19-4a32a6ea-c441-4a9a-9b21-f9d537c5d466.jpg" 
+          src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1920&q=80" 
           alt="Akses Premium VIP"
           class="w-full h-full object-cover"
         />
-        <div class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/90 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 sm:via-zinc-950/40 to-transparent"></div>
       </div>
 
-      <div class="absolute inset-0 flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-20 max-w-4xl pt-20">
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-white mb-2 drop-shadow-lg leading-tight">
-          Nonton Sepuasnya.<br />
+      <div class="relative z-10 flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-20 max-w-4xl pt-24 pb-12 w-full text-center md:text-left items-center md:items-start mx-auto md:mx-0">
+        <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-4 drop-shadow-lg leading-tight sm:leading-tight">
+          Nonton Sepuasnya.<br class="hidden sm:block" />
           <span class="text-amber-500">Tanpa Iklan.</span>
         </h1>
         
-        <p class="inline-block bg-white text-black font-extrabold px-4 py-1.5 rounded-md text-sm sm:text-lg mb-4 w-fit shadow-lg shadow-white/10">
-          Cuma Rp 99.000 / Akses Selamanya
+        <p class="inline-block bg-white text-black font-extrabold px-4 sm:px-5 py-2 rounded-md text-sm sm:text-lg mb-4 w-fit shadow-lg shadow-white/10">
+          Cuma Rp 129.000 / Akses Selamanya
         </p>
         
-        <p class="text-zinc-300 text-sm sm:text-base md:text-lg mb-8 line-clamp-3 md:line-clamp-none max-w-2xl drop-shadow-md">
+        <p class="text-zinc-300 text-sm sm:text-base md:text-lg mb-8 max-w-2xl drop-shadow-md leading-relaxed px-2 sm:px-0">
           Nikmati ribuan koleksi film dan series eksklusif dengan kualitas 4K. Tanpa batasan waktu, tanpa iklan yang mengganggu. Jadikan pengalaman menonton Anda lebih maksimal.
         </p>
         
-        <div class="flex">
-          <button onclick="scrollToForm()" class="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-black px-8 sm:px-10 py-3 sm:py-4 rounded-md font-bold transition-all transform hover:scale-105 shadow-xl shadow-amber-500/20 text-lg">
+        <div class="w-full sm:w-auto flex justify-center md:justify-start px-2 sm:px-0">
+          <button onclick="scrollToForm()" class="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-black px-6 sm:px-10 py-3.5 sm:py-4 rounded-md font-bold transition-all transform hover:scale-105 shadow-xl shadow-amber-500/20 text-base sm:text-lg w-full sm:w-auto">
             <i data-lucide="lock" class="w-5 h-5"></i>
             <span>Berlangganan Sekarang</span>
           </button>
@@ -80,63 +81,544 @@
     </div>
 
     <!-- Koleksi Film Section -->
-    <div class="relative z-20 pb-12 -mt-16 sm:-mt-24 bg-gradient-to-b from-transparent to-zinc-950">
-      <div class="relative py-4">
-        <h2 class="text-white text-lg sm:text-xl md:text-2xl font-bold px-4 sm:px-8 md:px-12 lg:px-20 mb-6 flex items-center gap-2">
+    <div class="relative z-20 pb-12 -mt-8 sm:-mt-24 bg-gradient-to-b from-transparent to-zinc-950">
+      <div class="relative py-4 max-w-[1600px] mx-auto">
+        <h2 class="text-white text-lg sm:text-xl md:text-2xl font-bold px-4 sm:px-8 md:px-12 lg:px-20 mb-4 sm:mb-6 flex items-center gap-2">
           Koleksi Film Eksklusif
         </h2>
         
-        <div class="px-4 sm:px-8 md:px-12 lg:px-20">
-          <!-- Area Grid untuk 40 Cover Film (Script di bawah akan men-generate-nya agar HTML tidak kepanjangan dan rapi) -->
-          <div id="movie-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
-             <!-- Cover film akan dimuat otomatis oleh JavaScript di bawah -->
+        <!-- Grid Film Responsif: 2 di HP, 3 di Tablet, 5-6 di Desktop -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-6 px-3 sm:px-8 md:px-12 lg:px-20">
+          
+          <!-- ================= COVER FILM 1 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <!-- GANTI LINK src DI BAWAH INI -->
+              <img src="https://cdn.phototourl.com/free/2026-09-19-4a32a6ea-c441-4a9a-9b21-f9d537c5d466.jpg" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
           </div>
+
+          <!-- ================= COVER FILM 2 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <!-- GANTI LINK src DI BAWAH INI -->
+              <img src="https://picsum.photos/seed/102/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 3 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/103/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 4 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/104/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 5 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/105/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 6 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/106/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 7 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/107/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 8 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/108/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 9 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/109/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 10 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/110/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 11 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/111/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 12 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/112/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 13 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/113/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 14 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/114/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 15 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/115/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 16 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/116/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 17 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/117/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 18 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/118/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 19 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/119/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 20 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/120/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 21 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/121/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 22 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/122/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 23 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/123/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 24 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/124/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 25 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/125/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 26 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/126/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 27 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/127/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 28 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/128/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 29 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/129/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 30 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/130/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 31 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/131/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 32 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/132/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 33 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/133/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 34 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/134/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 35 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/135/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 36 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/136/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 37 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/137/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 38 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/138/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 39 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/139/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= COVER FILM 40 ================= -->
+          <div onclick="openModal()" class="w-full group relative cursor-pointer">
+            <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-[1.03] hover:ring-2 hover:ring-amber-500 shadow-xl">
+              <img src="https://picsum.photos/seed/140/400/600" alt="Film" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                 <div class="bg-amber-500 p-2 sm:p-3 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                   <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                 </div>
+              </div>
+            </div>
+          </div>
+          <!-- Akhir 40 Slot Film -->
+          
         </div>
       </div>
     </div>
 
     <!-- Form Pembayaran / Checkout -->
-    <div id="form-pembayaran" class="w-full max-w-4xl mx-auto px-4 py-16 scroll-mt-20">
-      <div class="text-center mb-8">
-        <h2 class="text-3xl sm:text-4xl font-black text-amber-500 mb-2">Selesaikan Pemesanan</h2>
-        <p class="text-zinc-400">Isi form di bawah ini untuk mendapatkan Akses Premium 99rb Selamanya.</p>
+    <div id="form-pembayaran" class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 scroll-mt-20">
+      <div class="text-center mb-6 sm:mb-8">
+        <h2 class="text-3xl sm:text-4xl font-black text-amber-500 mb-3">Selesaikan Pemesanan</h2>
+        <p class="text-zinc-400 text-sm sm:text-base px-2">Isi form di bawah ini untuk mendapatkan Akses Premium 129rb Selamanya.</p>
       </div>
       
-      <div class="bg-white rounded-xl shadow-2xl overflow-hidden p-2">
-        <!-- Kode Iframe Orderhero dari Anda -->
+      <div class="bg-white rounded-xl shadow-2xl overflow-hidden p-1 sm:p-2 border border-zinc-800/50">
+        <!-- Kode Iframe Orderhero -->
         <iframe 
             id="orderhero-frame-6a64c31477acd609f30c981d" 
             src="https://ebookstorecenter.orderhero.id/form/form-pilem" 
             width="100%" 
             height="0" 
             frameborder="0" 
-            style="border:none;border-radius:8px;display:block;height:600px;transition:height 0.2s;"
+            style="border:none;border-radius:8px;display:block;height:600px;transition:height 0.2s;background-color:#ffffff;"
             title="Form Pembayaran"
         ></iframe>
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-zinc-950 pt-20 pb-12 mt-12 text-center">
+    <footer class="bg-zinc-950 pt-16 pb-12 mt-8 text-center border-t border-zinc-900">
       <div class="flex flex-col items-center justify-center gap-4">
         <div class="flex items-center gap-2">
-            <i data-lucide="star" class="text-zinc-800 w-6 h-6"></i>
-            <span class="text-zinc-700 font-bold text-xl tracking-tight">
+            <i data-lucide="star" class="text-zinc-800 w-5 h-5 sm:w-6 sm:h-6"></i>
+            <span class="text-zinc-700 font-bold text-lg sm:text-xl tracking-tight">
                 CINEMA<span class="text-zinc-800">BINTANG</span>
             </span>
         </div>
-        <p class="text-zinc-700 text-sm">&copy; 2026 Hak Cipta Dilindungi.</p>
+        <p class="text-zinc-700 text-xs sm:text-sm">&copy; 2026 Hak Cipta Dilindungi.</p>
       </div>
     </footer>
 
     <!-- Modal Akses Premium (Defaultnya disembunyikan pakai class "hidden") -->
-    <div id="payment-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
-      <div class="bg-zinc-900 border border-zinc-800 p-6 sm:p-8 rounded-2xl max-w-sm w-full relative shadow-2xl">
-        <button onclick="closeModal()" class="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors bg-zinc-800/50 rounded-full p-1">
+    <div id="payment-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 backdrop-blur-sm transition-opacity">
+      <div class="bg-zinc-900 border border-zinc-800 p-6 sm:p-8 rounded-2xl max-w-sm w-full relative shadow-2xl animate-[scale-up_0.2s_ease-out]">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors bg-zinc-800/50 rounded-full p-1.5 focus:outline-none">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
         
-        <div class="flex justify-center mb-4">
+        <div class="flex justify-center mb-5">
           <div class="bg-amber-500/20 p-4 rounded-full">
             <i data-lucide="lock" class="w-10 h-10 text-amber-500"></i>
           </div>
@@ -148,80 +630,37 @@
         </p>
 
         <div class="bg-zinc-950 rounded-lg p-4 mb-6 border border-zinc-800">
-           <div class="flex items-center gap-2 mb-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i>
+           <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0"></i>
               <span class="text-sm text-zinc-300">Sekali bayar untuk akses selamanya</span>
            </div>
-           <div class="flex items-center gap-2 mb-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i>
+           <div class="flex items-center gap-3 mb-3">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0"></i>
               <span class="text-sm text-zinc-300">Resolusi hingga 4K UHD</span>
            </div>
-           <div class="flex items-center gap-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i>
-              <span class="text-sm text-zinc-300">Bebas dari iklan</span>
+           <div class="flex items-center gap-3">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0"></i>
+              <span class="text-sm text-zinc-300">Bebas dari iklan mengganggu</span>
            </div>
         </div>
         
-        <button onclick="scrollToFormAndCloseModal()" class="flex items-center justify-center gap-2 w-full bg-amber-500 hover:bg-amber-400 text-black font-bold py-3.5 rounded-lg transition-all hover:scale-[1.02] shadow-lg shadow-amber-500/20">
+        <button onclick="scrollToFormAndCloseModal()" class="flex items-center justify-center gap-2 w-full bg-amber-500 hover:bg-amber-400 text-black font-bold py-3.5 rounded-lg transition-all hover:scale-[1.02] shadow-lg shadow-amber-500/20 focus:outline-none">
           <i data-lucide="arrow-down" class="w-5 h-5"></i>
-          Lanjut ke Form Pembayaran
+          Lanjut ke Pembayaran
         </button>
       </div>
     </div>
 
-    <!-- Script Interaktif & Data Film -->
+    <!-- Tambahan animasi custom ringan untuk modal -->
+    <style>
+      @keyframes scale-up {
+        0% { transform: scale(0.95); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+    </style>
+
     <script>
         // INISIALISASI IKON
-        lucide.createIcons();
-
-        // ---------------------------------------------------------
-        // AREA DATABASE COVER FILM (UBAH LINK GAMBAR DI SINI)
-        // ---------------------------------------------------------
-        // Anda hanya perlu mengganti link di bagian "image: '...'" 
-        // Jika Anda ingin mengupload cover Anda sendiri.
-        
-        const MOVIES_DATA = [];
-        for(let i = 1; i <= 40; i++) {
-            MOVIES_DATA.push({
-                title: "Film Eksklusif " + i,
-                // GANTI LINK INI dengan link cover film Anda
-                image: "https://picsum.photos/seed/" + (i + 10) + "/400/600" 
-            });
-        }
-
-        // FUNGSI UNTUK MERENDER KARTU FILM KE DALAM HTML
-        const movieGrid = document.getElementById('movie-grid');
-        let htmlContent = '';
-        
-        MOVIES_DATA.forEach((movie) => {
-            htmlContent += `
-            <div onclick="openModal()" class="w-full group relative cursor-pointer">
-              <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-105 hover:z-10 hover:ring-2 hover:ring-amber-500 shadow-xl">
-                <img 
-                  src="${movie.image}" 
-                  alt="${movie.title}"
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                   <div class="bg-amber-500 p-3 sm:p-4 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100 shadow-lg shadow-amber-500/30">
-                     <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
-                   </div>
-                </div>
-                <div class="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-                  <h3 class="text-white font-bold text-xs sm:text-sm text-center line-clamp-2 leading-tight">
-                    ${movie.title}
-                  </h3>
-                </div>
-              </div>
-            </div>
-            `;
-        });
-        
-        // Memasukkan HTML ke dalam grid
-        movieGrid.innerHTML = htmlContent;
-        // Render ulang ikon lucide di dalam grid baru
         lucide.createIcons();
 
         // ---------------------------------------------------------
@@ -232,10 +671,12 @@
 
         function openModal() {
             modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Kunci scroll background saat modal terbuka (bagus untuk HP)
         }
 
         function closeModal() {
             modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Kembalikan scroll
         }
 
         function scrollToForm() {
@@ -246,11 +687,14 @@
 
         function scrollToFormAndCloseModal() {
             closeModal();
-            scrollToForm();
+            // Memberi sedikit jeda agar animasi modal tutup terlihat mulus sebelum scroll
+            setTimeout(() => {
+                scrollToForm();
+            }, 100);
         }
 
         // ---------------------------------------------------------
-        // SCRIPT IFRAME ORDERHERO (Sesuai Permintaan Anda)
+        // SCRIPT IFRAME ORDERHERO
         // ---------------------------------------------------------
         (function(){
             var f = document.getElementById('orderhero-frame-6a64c31477acd609f30c981d');
@@ -258,9 +702,13 @@
             window.addEventListener('message', function(e){
                 if(!e.data || !e.source) return;
                 if(f.contentWindow !== e.source) return;
+                
+                // Menyesuaikan tinggi otomatis
                 if(e.data.type === 'orderhero:resize'){
                     f.style.height = e.data.height + 'px';
                 }
+                
+                // Menyesuaikan viewport
                 if(e.data.type === 'orderhero:request-viewport'){
                     var r = f.getBoundingClientRect();
                     var sy = window.scrollY || window.pageYOffset || 0;
@@ -271,6 +719,8 @@
                         viewH: window.innerHeight
                     }, '*');
                 }
+                
+                // Navigasi dari dalam iframe
                 if(e.data.type === 'orderhero:navigate' && typeof e.data.url === 'string'){
                     var navUrl = e.data.url;
                     if(navUrl.indexOf('/') === 0){
