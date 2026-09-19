@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Bintang - Nonton Film Tanpa Iklan</title>
+    
+    <!-- Tailwind CSS untuk Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons untuk Ikon Bintang, Gembok, dll -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #09090b; 
+        }
+        .aspect-\\[2\\/3\\] { aspect-ratio: 2 / 3; }
+        html { scroll-behavior: smooth; }
+        .scroll-mt-20 { scroll-margin-top: 5rem; }
+    </style>
+</head>
+<body class="bg-zinc-950 min-h-screen text-white selection:bg-amber-500 selection:text-black">
+
+    <!-- Top Banner -->
+    <div class="bg-amber-500 text-black text-center py-2 px-4 text-xs sm:text-sm font-bold tracking-widest uppercase relative z-50 shadow-md">
+        Nonton Film Puas Tanpa Iklan
+    </div>
+
+    <!-- Navbar -->
+    <nav class="absolute w-full z-40 bg-gradient-to-b from-black/90 to-transparent pt-2 pb-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center md:justify-start items-center h-20">
+          <div class="flex items-center gap-2 cursor-pointer">
+            <i data-lucide="star" class="text-amber-500 fill-amber-500 w-8 h-8 md:w-10 md:h-10"></i>
+            <span class="text-white font-bold text-2xl md:text-3xl tracking-tight">
+              CINEMA<span class="text-amber-500">BINTANG</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative w-full h-[60vh] sm:h-[75vh] bg-zinc-900">
+      <div class="absolute inset-0">
+        <!-- GAMBAR BACKGROUND HERO (Bisa Anda ganti linknya di bawah ini) -->
+        <img 
+          src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1920&q=80" 
+          alt="Akses Premium VIP"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+      </div>
+
+      <div class="absolute inset-0 flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-20 max-w-4xl pt-20">
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black text-white mb-2 drop-shadow-lg leading-tight">
+          Nonton Sepuasnya.<br />
+          <span class="text-amber-500">Tanpa Iklan.</span>
+        </h1>
+        
+        <p class="inline-block bg-white text-black font-extrabold px-4 py-1.5 rounded-md text-sm sm:text-lg mb-4 w-fit shadow-lg shadow-white/10">
+          Cuma Rp 99.000 / Akses Selamanya
+        </p>
+        
+        <p class="text-zinc-300 text-sm sm:text-base md:text-lg mb-8 line-clamp-3 md:line-clamp-none max-w-2xl drop-shadow-md">
+          Nikmati ribuan koleksi film dan series eksklusif dengan kualitas 4K. Tanpa batasan waktu, tanpa iklan yang mengganggu. Jadikan pengalaman menonton Anda lebih maksimal.
+        </p>
+        
+        <div class="flex">
+          <button onclick="scrollToForm()" class="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-black px-8 sm:px-10 py-3 sm:py-4 rounded-md font-bold transition-all transform hover:scale-105 shadow-xl shadow-amber-500/20 text-lg">
+            <i data-lucide="lock" class="w-5 h-5"></i>
+            <span>Berlangganan Sekarang</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Koleksi Film Section -->
+    <div class="relative z-20 pb-12 -mt-16 sm:-mt-24 bg-gradient-to-b from-transparent to-zinc-950">
+      <div class="relative py-4">
+        <h2 class="text-white text-lg sm:text-xl md:text-2xl font-bold px-4 sm:px-8 md:px-12 lg:px-20 mb-6 flex items-center gap-2">
+          Koleksi Film Eksklusif
+        </h2>
+        
+        <div class="px-4 sm:px-8 md:px-12 lg:px-20">
+          <!-- Area Grid untuk 40 Cover Film (Script di bawah akan men-generate-nya agar HTML tidak kepanjangan dan rapi) -->
+          <div id="movie-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
+             <!-- Cover film akan dimuat otomatis oleh JavaScript di bawah -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Pembayaran / Checkout -->
+    <div id="form-pembayaran" class="w-full max-w-4xl mx-auto px-4 py-16 scroll-mt-20">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl sm:text-4xl font-black text-amber-500 mb-2">Selesaikan Pemesanan</h2>
+        <p class="text-zinc-400">Isi form di bawah ini untuk mendapatkan Akses Premium 99rb Selamanya.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-2xl overflow-hidden p-2">
+        <!-- Kode Iframe Orderhero dari Anda -->
+        <iframe 
+            id="orderhero-frame-6a64c31477acd609f30c981d" 
+            src="https://ebookstorecenter.orderhero.id/form/form-pilem" 
+            width="100%" 
+            height="0" 
+            frameborder="0" 
+            style="border:none;border-radius:8px;display:block;height:600px;transition:height 0.2s;"
+            title="Form Pembayaran"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 pt-20 pb-12 mt-12 text-center">
+      <div class="flex flex-col items-center justify-center gap-4">
+        <div class="flex items-center gap-2">
+            <i data-lucide="star" class="text-zinc-800 w-6 h-6"></i>
+            <span class="text-zinc-700 font-bold text-xl tracking-tight">
+                CINEMA<span class="text-zinc-800">BINTANG</span>
+            </span>
+        </div>
+        <p class="text-zinc-700 text-sm">&copy; 2026 Hak Cipta Dilindungi.</p>
+      </div>
+    </footer>
+
+    <!-- Modal Akses Premium (Defaultnya disembunyikan pakai class "hidden") -->
+    <div id="payment-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
+      <div class="bg-zinc-900 border border-zinc-800 p-6 sm:p-8 rounded-2xl max-w-sm w-full relative shadow-2xl">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors bg-zinc-800/50 rounded-full p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+        
+        <div class="flex justify-center mb-4">
+          <div class="bg-amber-500/20 p-4 rounded-full">
+            <i data-lucide="lock" class="w-10 h-10 text-amber-500"></i>
+          </div>
+        </div>
+        
+        <h3 class="text-2xl font-black text-white mb-2 text-center">Akses Premium</h3>
+        <p class="text-zinc-400 text-sm text-center mb-6 leading-relaxed">
+          Tingkatkan akun Anda untuk lanjut menonton film ini. Nikmati seluruh koleksi tanpa batas dan tanpa iklan!
+        </p>
+
+        <div class="bg-zinc-950 rounded-lg p-4 mb-6 border border-zinc-800">
+           <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i>
+              <span class="text-sm text-zinc-300">Sekali bayar untuk akses selamanya</span>
+           </div>
+           <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i>
+              <span class="text-sm text-zinc-300">Resolusi hingga 4K UHD</span>
+           </div>
+           <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i>
+              <span class="text-sm text-zinc-300">Bebas dari iklan</span>
+           </div>
+        </div>
+        
+        <button onclick="scrollToFormAndCloseModal()" class="flex items-center justify-center gap-2 w-full bg-amber-500 hover:bg-amber-400 text-black font-bold py-3.5 rounded-lg transition-all hover:scale-[1.02] shadow-lg shadow-amber-500/20">
+          <i data-lucide="arrow-down" class="w-5 h-5"></i>
+          Lanjut ke Form Pembayaran
+        </button>
+      </div>
+    </div>
+
+    <!-- Script Interaktif & Data Film -->
+    <script>
+        // INISIALISASI IKON
+        lucide.createIcons();
+
+        // ---------------------------------------------------------
+        // AREA DATABASE COVER FILM (UBAH LINK GAMBAR DI SINI)
+        // ---------------------------------------------------------
+        // Anda hanya perlu mengganti link di bagian "image: '...'" 
+        // Jika Anda ingin mengupload cover Anda sendiri.
+        
+        const MOVIES_DATA = [];
+        for(let i = 1; i <= 40; i++) {
+            MOVIES_DATA.push({
+                title: "Film Eksklusif " + i,
+                // GANTI LINK INI dengan link cover film Anda
+                image: "https://picsum.photos/seed/" + (i + 10) + "/400/600" 
+            });
+        }
+
+        // FUNGSI UNTUK MERENDER KARTU FILM KE DALAM HTML
+        const movieGrid = document.getElementById('movie-grid');
+        let htmlContent = '';
+        
+        MOVIES_DATA.forEach((movie) => {
+            htmlContent += `
+            <div onclick="openModal()" class="w-full group relative cursor-pointer">
+              <div class="relative aspect-[2/3] rounded-lg overflow-hidden bg-zinc-800 transition-all duration-300 hover:scale-105 hover:z-10 hover:ring-2 hover:ring-amber-500 shadow-xl">
+                <img 
+                  src="${movie.image}" 
+                  alt="${movie.title}"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                   <div class="bg-amber-500 p-3 sm:p-4 rounded-full transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100 shadow-lg shadow-amber-500/30">
+                     <i data-lucide="play" class="w-6 h-6 text-black fill-black ml-1"></i>
+                   </div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
+                  <h3 class="text-white font-bold text-xs sm:text-sm text-center line-clamp-2 leading-tight">
+                    ${movie.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+            `;
+        });
+        
+        // Memasukkan HTML ke dalam grid
+        movieGrid.innerHTML = htmlContent;
+        // Render ulang ikon lucide di dalam grid baru
+        lucide.createIcons();
+
+        // ---------------------------------------------------------
+        // FUNGSI NAVIGASI & POPUP MODAL
+        // ---------------------------------------------------------
+        const modal = document.getElementById('payment-modal');
+        const formElement = document.getElementById('form-pembayaran');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        function scrollToForm() {
+            if (formElement) {
+                formElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function scrollToFormAndCloseModal() {
+            closeModal();
+            scrollToForm();
+        }
+
+        // ---------------------------------------------------------
+        // SCRIPT IFRAME ORDERHERO (Sesuai Permintaan Anda)
+        // ---------------------------------------------------------
+        (function(){
+            var f = document.getElementById('orderhero-frame-6a64c31477acd609f30c981d');
+            if(!f) return;
+            window.addEventListener('message', function(e){
+                if(!e.data || !e.source) return;
+                if(f.contentWindow !== e.source) return;
+                if(e.data.type === 'orderhero:resize'){
+                    f.style.height = e.data.height + 'px';
+                }
+                if(e.data.type === 'orderhero:request-viewport'){
+                    var r = f.getBoundingClientRect();
+                    var sy = window.scrollY || window.pageYOffset || 0;
+                    e.source.postMessage({
+                        type: 'orderhero:viewport-info',
+                        iframeY: r.top + sy,
+                        scrollY: sy,
+                        viewH: window.innerHeight
+                    }, '*');
+                }
+                if(e.data.type === 'orderhero:navigate' && typeof e.data.url === 'string'){
+                    var navUrl = e.data.url;
+                    if(navUrl.indexOf('/') === 0){
+                        navUrl = e.origin + navUrl;
+                    }
+                    window.location.href = navUrl;
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
